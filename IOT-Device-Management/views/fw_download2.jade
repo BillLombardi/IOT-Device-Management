@@ -1,0 +1,28 @@
+   form.well(id='fwdownload', method='post', action='fwdownload')
+    P  
+       | &nbsp&nbsp
+    P  
+       h2 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Enter Firmware details
+    P  
+       | &nbsp&nbsp
+    P   
+       input(placeholder="Uri", name="fw_uri")
+    P  
+       input(placeholder="Name", name="fw_name")       
+    P  
+       input(placeholder="Verifier", name="fw_verifier")
+    P  
+       input(placeholder="Version", name="fw_version")
+    P  
+       | &nbsp&nbsp
+    P
+       button.b2 (id='fw_dn_submit', name='fw_dn_submit', value='submit') Submit
+       | &nbsp&nbsp       
+       button.b2 (id='fw_dn_submit', name='fw_dn_submit', value='cancel') Cancel
+    P
+       | &nbsp&nbsp
+    P  
+       |   
+       if(failed=='true')
+        error-font #{error}
+            

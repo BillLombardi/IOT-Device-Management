@@ -1,0 +1,68 @@
+extend layout
+block content
+  form.well(id='device-edit-go', method='post', action='device-edit-go')
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | Device Id - #{dev.d_id}
+      | &nbsp&nbsp&nbsp&nbsp
+      | Device Type - #{dev.d_type}
+      input(type='hidden', id='sdev_id', name='sdev_id', value='#{dev.d_id}')
+      input(type='hidden', id='sdev_type', name='sdev_type', value='#{dev.d_type}') 
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    P
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | Device Info -   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      textarea(name = 'sdev_deviceInfo', rows='4', cols='108')
+        |  #{dev.d_info}
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    P
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | Device Metadata -   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      textarea(name = 'sdev_metadata', rows='4', cols='108')
+        |  #{dev.d_metadata}
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    P
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | Device Status -   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      textarea(name = 'sdev_status', rows='4', cols='108')
+        |  #{dev.d_status}
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | &nbsp&nbsp
+      button.b1 &nbspSubmit&nbsp
+    P
+       | &nbsp&nbsp
+    P  
+       |   
+       if(failed=='true')
+        error-font #{error}
+block sidebar
+  .widget
+    h1 Instructions
+    p
+      | This website is developed to showcase IOT Device management APIs
+      | 
+    p
+      | 
+    P  
+      |  
+      | 
+    P  
+      | 
+      | 
+      | 
+    P 
+      | 

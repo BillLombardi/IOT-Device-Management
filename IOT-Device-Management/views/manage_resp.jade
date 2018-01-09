@@ -1,0 +1,45 @@
+extend layout
+block content
+
+  form.well(id='type-submit', method='post', action='type-submit')
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      Device Id - #{dev_id}
+      | &nbsp&nbsp&nbsp&nbsp
+      Device Type - #{dev_type}
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      textarea(id="theTextarea", rows='20', cols='108', disabled='disabled')
+        |  #{selected_dev}
+                 
+  form.well(id='device-manage1', method='post', action='device-manage1')
+    input(type='hidden', id='selected_dev', name='selected_dev', value='#{selected_dev}') 
+    input(type='hidden', id='dev_id', name='dev_id', value='#{dev_id}')
+    input(type='hidden', id='dev_type', name='dev_type', value='#{dev_type}') 
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | &nbsp&nbsp
+      button.b2(id='reboot', name='dev_man1', value='reboot') &nbspReboot&nbsp 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='fwDownload', name='dev_man1', value='fwDownload') &nbspFirmware Download&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='fwUpgrade', name='dev_man1', value='fwUpgrade') &nbspFirmware Upgrade&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='facReset', name='dev_man1', value='facReset') &nbspFactory Reset&nbsp
+block sidebar
+  .widget
+    h1 Response from device
+    p
+      | 
+    p
+      | RequestId - #{req_id}
+    p
+      | Response - #{resp_msg}
+    P  
+      | &nbsp&nbsp

@@ -1,0 +1,9 @@
+{
+        "org": "3tud1d",
+        "domain": "internetofthings.ibmcloud.com",
+        "type": "MQTTDevice",
+        "id": "4213",
+        "auth-method": "token",
+        "auth-token": "ayan_mukherjee",
+        "use-client-certs": false
+}

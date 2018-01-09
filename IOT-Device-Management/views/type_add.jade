@@ -1,0 +1,55 @@
+extend layout
+block content
+   form.well(id='device-add-go', method='post', action='type-add-go')
+    P  
+       | &nbsp&nbsp
+    P  
+       h2 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Add New IOT Device Type - Enter Type Details
+    P  
+       | &nbsp&nbsp
+
+    P   
+       input(placeholder="Device Type Name", name="type_name", required="true")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Type Description", name="type_desc")       
+       | &nbsp&nbsp&nbsp&nbsp
+    P  
+       | &nbsp&nbsp       
+    P 
+       input(placeholder="Custom Field 1", name="custom_field1") 
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Custom Field 2", name="custom_field2")
+       | &nbsp&nbsp&nbsp&nbsp
+    P 
+       input(placeholder="Custom Field 3", name="custom_field3") 
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Custom Field 4", name="custom_field4")
+       | &nbsp&nbsp&nbsp&nbsp
+    P  
+       | &nbsp&nbsp       
+    P
+       button.b1 Add
+    P
+       | &nbsp&nbsp
+    P  
+       |   
+       if(failed=='true')
+        error-font #{error}
+              
+block sidebar
+  .widget
+    h1 Instructions
+    p
+      | This website is developed to showcase IOT Device management APIs
+      | 
+    p
+      | 
+    P  
+      |  
+      | 
+    P  
+      | 
+      | 
+      | 
+    P 
+      | 

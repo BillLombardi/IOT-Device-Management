@@ -1,0 +1,87 @@
+extend layout
+block content
+   form.well(id='device-add-go', method='post', action='device-add-go')
+    P  
+       | &nbsp&nbsp
+    P  
+       h2 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Add New IOT Device - Enter Device Details
+    P  
+       | &nbsp&nbsp
+    P  
+       | &nbsp&nbsp
+       label Basic Device Information
+    P   
+       input(placeholder="Device Id", name="device_id", required="true")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Auth Token", name="auth_token", required="true")       
+       | &nbsp&nbsp&nbsp&nbsp
+       select(id="type_select", name="type_select", required="true")
+         option(value='', selected='selected', disabled='true') Device Type
+           for item in selected_org.device_types
+             option !{item.id} 
+    P  
+       input(placeholder="Serial Number", name="serial_number") 
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Manufacturer", name="manufacturer")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Model", name="model")
+
+    P
+       input(placeholder="Device Class", name="device_class")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Firmware Version", name="firmware_version")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Hardware Version", name="hardware_version")
+    P  
+       | &nbsp&nbsp
+       label Location Details
+    P  
+       input(placeholder="Descriptive Location", name="descriptive_location")       
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Longitude", name="longitude")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Latitude", name="latitude")
+    P  
+       input(placeholder="Elevation", name="elevation")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Accuracy", name="accuracy")
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Measured DateTime", name="measured_datetime")       
+    P  
+       | &nbsp&nbsp
+       label Metadata
+    P  
+       input(placeholder="Custom Field 1", name="custom_field1")       
+       | &nbsp&nbsp&nbsp&nbsp
+       input(placeholder="Custom Field 2", name="custom_field2")       
+   
+    P  
+       | &nbsp&nbsp
+    P
+       button.b1 Add
+       | &nbsp&nbsp&nbsp&nbsp
+       button.b1 Back
+    P
+       | &nbsp&nbsp
+    P  
+       |   
+       if(failed=='true')
+        error-font #{error}
+              
+block sidebar
+  .widget
+    h1 Instructions
+    p
+      | This website is developed to showcase IOT Device management APIs
+      | 
+    p
+      | 
+    P  
+      |  
+      | 
+    P  
+      | 
+      | 
+      | 
+    P 
+      | 

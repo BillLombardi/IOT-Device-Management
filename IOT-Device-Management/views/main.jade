@@ -1,0 +1,87 @@
+extend layout
+block content
+  script(type="text/javascript"). 
+    function del() 
+    { 
+      return confirm('Are you sure?');
+    };
+    function deltype() 
+    { 
+      if(document.getElementById("type-submit").elements["device_types"].value == 'All')
+      {
+      	alert('Please enter a device type');
+      	return false;
+      }
+      return confirm('Are you sure?');
+    };
+  form.well(id='iot-login', method='post', action='logout-submit')
+    P
+      | &nbsp&nbsp
+      button.r Logout
+  form.well(id='type-submit', method='post', action='type-submit')
+    p
+      | Org Name : 
+      input.small(disabled="disabled" value=appConfig.org) 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | App Id :  
+      input.small(disabled="disabled" value=appConfig.id) 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | Device Type :  
+      select(id="device_types", name="device_types")
+       option(value='All', selected='All') All
+        for item in selected_org.device_types
+          option !{item.id} 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b1(name='type_select', value='select_go') &nbspGo&nbsp 
+      | &nbsp&nbsp&nbsp
+      button.b1(name='type_select', value='select_delete',onclick="return deltype()") &nbspDelete&nbsp       
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp            
+  form.well(id='device-manage', method='post', action='device-manage')
+    p
+      table
+        for item1 in selected_org.selected_devices
+         tr
+           td.sp1
+             input.small(type='radio', id='device_radio', name='device_radio', checked='checked', value="#{item1.typeId},#{item1.deviceId}")
+           td.sp
+             img(src="/images/device.png")
+           td
+             | Device Type - #{item1.typeId}  
+           td
+             | Device Id - #{item1.deviceId} 
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='add_device', name='dev_man', value='add_device') &nbspAdd Device&nbsp 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='add_device_type', name='dev_man', value='add_device_type') &nbspAdd Device Type&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='manage_device', name='dev_man', value='manage_device') &nbspManage&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='delete_device',name='dev_man',value='delete_device',onclick="return del()") &nbspDelete&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='edit_device', name='dev_man', value='edit_device') &nbspEdit&nbsp      
+block sidebar
+  .widget
+    h1 Instructions
+    p
+      | This website is developed to showcase IOT Device management APIs
+      | 
+    p
+      | 
+    P  
+      |  
+      | 
+    P  
+      | 
+      | 
+      | 
+    P 
+      | 

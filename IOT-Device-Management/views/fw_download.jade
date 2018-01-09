@@ -1,0 +1,61 @@
+extend layout
+block content
+
+  form.well(id='type-submit', method='post', action='type-submit')
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      Device Id - #{dev_id}
+      | &nbsp&nbsp&nbsp&nbsp
+      Device Type - #{dev_type}
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      textarea(id="theTextarea", rows='20', cols='108')
+        |  #{selected_dev}
+                 
+  form.well(id='device-manage1', method='post', action='device-manage1')
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+    p
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      | &nbsp&nbsp
+      button.b2(id='reboot', name='dev_man1', value='reboot', disabled="disabled") &nbspReboot&nbsp 
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='fwDownload', name='dev_man1', value='fwDownload', disabled="disabled") &nbspFirmware Download&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='fwUpgrade', name='dev_man1', value='fwUpgrade', disabled="disabled") &nbspFirmware Upgrade&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      button.b2(id='facReset', name='dev_man1', value='facReset', disabled="disabled") &nbspFactory Reset&nbsp
+      | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+block sidebar
+  .widget
+   h1 Additional Information needed
+   form.well(id='fwdownload-go', method='post', action='fwdownload-go')
+    P  
+       | &nbsp&nbsp
+       input(type='hidden', id='dev_id', name='dev_id', value='#{dev_id}')
+       input(type='hidden', id='dev_type', name='dev_type', value='#{dev_type}') 
+       input(type='hidden', id='selected_dev', name='selected_dev', value='#{selected_dev}') 
+    P  
+       h2 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Enter Firmware details
+    P  
+       | &nbsp&nbsp
+    P   
+       input(placeholder="Uri", name="fw_uri")
+    P  
+       input(placeholder="Name", name="fw_name")       
+    P  
+       input(placeholder="Verifier", name="fw_verifier")
+    P  
+       input(placeholder="Version", name="fw_version")
+    P  
+       | &nbsp&nbsp
+    P
+       button.b1(id='fw_dn_submit', name='fw_dn_submit', value='submit') Submit
+       | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
+       button.b1(id='fw_dn_submit', name='fw_dn_submit', value='cancel') Cancel
+
+            

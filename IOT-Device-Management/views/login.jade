@@ -1,0 +1,47 @@
+extend layout
+block content
+   form.well(id='iot-login', method='post', action='login-submit')
+    P  
+       | &nbsp&nbsp
+    P  
+       h2 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Enter IOT organization details
+    P  
+       | &nbsp&nbsp
+    P   
+       input(placeholder="Org", name="input_org")
+    P  
+       input(placeholder="Id", name="input_id")       
+    P  
+       input(placeholder="Auth-key", name="input_key")
+    P  
+       input(placeholder="Auth-token", name="input_token")
+    P  
+       | &nbsp&nbsp
+    P
+       button.b1(id='login_btn', name='login_btn', value='login') Login
+       | &nbsp&nbsp&nbsp 
+       button.b1(id='login_btn', name='login_btn', value='demo') Demo
+    P
+       | &nbsp&nbsp
+    P  
+       |   
+       if(failed=='true')
+        error-font #{error}
+              
+block sidebar
+  .widget
+    h1 Instructions
+    p
+      | This website is developed to showcase IOT Device management APIs
+      | 
+    p
+      | 
+    P  
+      |  
+      | 
+    P  
+      | 
+      | 
+      | 
+    P 
+      | 
